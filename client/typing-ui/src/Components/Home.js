@@ -1,32 +1,30 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import '../index.css';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Navbar from './Navbar';
-import Context from '../Context/Context';
 
 const Home = () => {
     const [userName, setUserName] = useState();
-    const [response, setResponse] = useState();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const navigate = useNavigate();
-    const context = useContext(Context);
+
     const usernameHandler = event => {
         setUserName(event.target.value);
     }
-    const validateHandler = async (event) => {
-        //match otp sent and the one user entered in the input box
-        //return the state of matching
-        await axios.post("http://localhost:3001/api/insert/user/verify/email", {email: userName, verifycode: event.target.value})
-        .then(res => { 
-            console.log(res.data.loggedIn);
-            setIsAuthenticated(res.data.loggedIn);
-            context.isLoggedIn = true;
-            if(context.isLoggedIn === true){
-                navigate('/typing-test', {replace: true});
-            }
+    const submitHandler = (event) => {
+        event.preventDefault();
+        //post data
+        axios.post("http://localhost:3001/api/insert/user", { email: userName })
+        .then(res =>{
+            console.log(res.status);
+            console.log(res.data);
         })
+        navigate('/validate', { replace: true });
+    }
+    const validateHandler = () => {
+        //match otp sent and the one user entered in the input box
     }
     const validateCaptcha = (value) => {
         console.log('Captcha value:', value);
@@ -34,34 +32,20 @@ const Home = () => {
             //post data
             axios.post("http://localhost:3001/api/insert/user", { email: userName })
             .then(res =>{
+                console.log(res.status);
                 if(res.status === 200){
-                    console.log(res.status);
+                    navigate('/validate', { replace: true });
                 }else{
                     navigate('*', {replace: true});
                 }
                 console.log(res.data);
             })
             console.log("form submitted");
-            axios.post("http://localhost:3001/api/insert/user/verify", { email: userName })
-                    .then(res =>{
-                        if(res.status === 200){
-                            console.log(res.status)
-                        }else{
-                            navigate('*', {replace: true});
-                        }
-                        console.log(res.data);
-                    })
-                    
+            setIsAuthenticated(true);
         }else{
             setIsAuthenticated(false);
         }
-      }
-      
-      useEffect(()=>{
-          if(response){
-            console.log(response);
-          }
-      },[response, setResponse])
+      } 
 
     return ( 
         <div className='bg-theme' style={{"height": "91vh"}}>
@@ -74,9 +58,9 @@ const Home = () => {
                 </div>
                 <div>
                     <h2>Take the Test today!</h2>
-                    <form>
-                        <input type="email" id="username" className="form-control my-3 py-3 px-3" placeholder="Enter your email address" style={{"minWidth": "340px"}} onChange={usernameHandler}></input>
-                        <input type="text" id="userotp" className="form-control my-3 py-3 px-3" placeholder="Enter OTP sent to your email" style={{"minWidth": "340px"}} onChange={validateHandler}/>
+                    <form onSubmit = { submitHandler }>
+                        <input type="email" id="username" className="form-control my-3 py-3 px-3" placeholder="Type your name to start the test..." style={{"minWidth": "340px"}} onChange={usernameHandler}></input>
+                        <button type='submit' className='px-5 d-block mx-auto py-2 btn btn-theme-secondary text-white h3'>Go to Test</button>
                         <div className="App">
                             <ReCAPTCHA
                                 sitekey="6Lf3KbQeAAAAAHXlYdJ315hoNAQm5UsjmBsXzfuN"
@@ -84,7 +68,8 @@ const Home = () => {
                                 onErrored={()=>{alert("Wrong Captacha! Retry Again")}}
                             />
                         </div>
-                        <button type='submit' className='px-5 my-3 d-block mx-auto py-2 btn btn-theme-secondary text-white h3'>Go to Test</button>
+                        <input type="text" id="userotp" className="form-control my-3 py-3 px-3" placeholder="ENter OTP" style={{"minWidth": "340px"}} onChange={validateHandler}/>
+                        <button></button>
                     </form>
                 </div>
             </div>
