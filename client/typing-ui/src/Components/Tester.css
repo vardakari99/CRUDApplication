@@ -1,5 +1,4 @@
 .tester{
-    background-color:  #000;
     padding: 30px 44px;
 }
 .display-card{
@@ -50,11 +49,11 @@
     color: #fff;
 }
 .word-section{
-    height: 6em;
+    height: 8em;
     line-height: 2em;
     border-radius: .25em;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-size: 22px;
 }
 .word-section>span{
@@ -98,5 +97,7 @@
     color: #dd2525;
 }
 .underline{
-    text-decoration: underline 3px solid #2fd8d8;
+    color: #0062cc;
+    font-weight: 500;
+    /* text-decoration: underline 3px solid #2fd8d8; */
 }

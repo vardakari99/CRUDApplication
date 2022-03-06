@@ -2,9 +2,7 @@ var mysql = require('mysql');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 var express = require('express');
-const e = require('cors');
 const nodemailer = require('nodemailer');
-const { application } = require('express');
 const app = express();
 
 var connection = mysql.createConnection({

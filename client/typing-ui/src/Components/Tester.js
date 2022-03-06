@@ -12,105 +12,408 @@ const Tester = () => {
             level: 1,
             wordset: [{
                 id: 1,
-                word: "hello"
+                word: "A"
             },
             {
                 id: 2,
-                word: "parrot"
+                word: "salt"
             },
             {
                 id: 3,
-                word: "language"
+                word: "seller"
             },
             {
                 id: 4,
-                word: "vegetable"
+                word: "used"
             },
             {
                 id: 5,
-                word: "flower"
-            },
-            {
-                id: 6,
-                word: "go"
-            },
-            {
-                id: 7,
                 word: "to"
             },
             {
+                id: 6,
+                word: "carry"
+            },
+            {
+                id: 7,
+                word: "the"
+            },
+            {
                 id: 8,
-                word: "farm"
+                word: "salt"
             },
             {
                 id: 9,
-                word: "get"
+                word: "bag"
             },
             {
                 id: 10,
-                word: "me"
+                word: "on"
             },
             {
                 id: 11,
-                word: "a"
+                word: "his"
             },
             {
                 id: 12,
-                word: "fruit"
+                word: "donkey"
             },
             {
                 id: 13,
-                word: "pineapple"
+                word: "to"
             },
             {
                 id: 14,
-                word: "house"
+                word: "the"
             },
             {
                 id: 15,
-                word: "sleep"
+                word: "market"
             },
             {
                 id: 16,
-                word: "zebra"
+                word: "every"
             },
             {
                 id: 17,
-                word: "live"
+                word: "day."
             },
             {
                 id: 18,
-                word: "your"
+                word: "On"
             },
             {
                 id: 19,
-                word: "life"
+                word: "the"
             },
             {
                 id: 20,
-                word: "good"
+                word: "way"
             },
             {
                 id: 21,
-                word: "no"
+                word: "they"
             },
             {
                 id: 22,
-                word: "regrets"
+                word: "had"
             },
             {
                 id: 23,
-                word: "ever"
+                word: "to"
             },
             {
                 id: 24,
-                word: "kid"
+                word: "cross"
             },
             {
                 id: 25,
-                word: "bless"
-            }    
-        ]
+                word: "a"
+            },    
+            {
+                id: 26,
+                word: "stream."
+            },
+            {
+                id: 27,
+                word: "One"
+            },
+            {
+                id: 28,
+                word: "day"
+            },
+            {
+                id: 29,
+                word: "the"
+            },
+            {
+                id: 30,
+                word: "donkey"
+            },
+            {
+                id: 31,
+                word: "suddenly"
+            },
+            {
+                id: 32,
+                word: "tumbled"
+            },
+            {
+                id: 33,
+                word: "down"
+            },
+            {
+                id: 34,
+                word: "the"
+            },
+            {
+                id: 35,
+                word: "stream"
+            },
+            {
+                id: 36,
+                word: "and"
+            },
+            {
+                id: 37,
+                word: "the"
+            },
+            {
+                id: 38,
+                word: "salt"
+            },
+            {
+                id: 39,
+                word: "bag"
+            },
+            {
+                id: 40,
+                word: "also"
+            },
+            {
+                id: 41,
+                word: "fell"
+            },
+            {
+                id: 42,
+                word: "into"
+            },
+            {
+                id: 43,
+                word: "the"
+            },
+            {
+                id: 44,
+                word: "water."
+            },
+            {
+                id: 45,
+                word: "The"
+            },
+            {
+                id: 46,
+                word: "salt"
+            },
+            {
+                id: 47,
+                word: "dissolved"
+            }, 
+            {
+                id: 48,
+                word: "in"
+            },
+            {
+                id: 49,
+                word: "the"
+            }, 
+            {
+                id: 50,
+                word: "water"
+            }, 
+            {
+                id: 51,
+                word: "and"
+            },
+            {
+                id: 52,
+                word: "hence"
+            },
+            {
+                id: 53,
+                word: "the"
+            },
+            {
+                id: 54,
+                word: "bag"
+            },
+            {
+                id: 55,
+                word: "became"
+            },
+            {
+                id: 56,
+                word: "very"
+            },
+            {
+                id: 57,
+                word: "light"
+            },
+            {
+                id: 58,
+                word: "to"
+            },
+            {
+                id: 59,
+                word: "carry."
+            },
+            {
+                id: 60,
+                word: "The"
+            },
+            {
+                id: 61,
+                word: "donkey"
+            },
+            {
+                id: 62,
+                word: "was"
+            },
+            {
+                id: 63,
+                word: "happy."
+            },
+            {
+                id: 64,
+                word: "Then"
+            },
+            {
+                id: 65,
+                word: "the"
+            },
+            {
+                id: 66,
+                word: "donkey"
+            },
+            {
+                id: 67,
+                word: "started"
+            },
+            {
+                id: 68,
+                word: "to"
+            },
+            {
+                id: 69,
+                word: "play"
+            },
+            {
+                id: 70,
+                word: "the"
+            },
+            {
+                id: 71,
+                word: "same"
+            },
+            {
+                id: 72,
+                word: "trick"
+            },
+            {
+                id: 73,
+                word: "every"
+            },
+            {
+                id: 74,
+                word: "day."
+            },
+            {
+                id: 75,
+                word: "The"
+            },
+            {
+                id: 76,
+                word: "salt"
+            },
+            {
+                id: 77,
+                word: "seller"
+            },
+            {
+                id: 78,
+                word: "came"
+            },
+            {
+                id: 79,
+                word: "to"
+            },
+            {
+                id: 80,
+                word: "understand"
+            },
+            {
+                id: 81,
+                word: "the"
+            },
+            {
+                id: 82,
+                word: "trick"
+            },
+            {
+                id: 83,
+                word: "and"
+            },
+            {
+                id: 84,
+                word: "decided"
+            },
+            {
+                id: 85,
+                word: "to"
+            },
+            {
+                id: 86,
+                word: "teach"
+            },
+            {
+                id: 87,
+                word: "a"
+            },
+            {
+                id: 88,
+                word: "lesson"
+            },
+            {
+                id: 89,
+                word: "to"
+            },
+            {
+                id: 89,
+                word: "it."
+            },
+            {
+                id: 90,
+                word: "The"
+            },
+            {
+                id: 91,
+                word: "next"
+            },
+            {
+                id: 92,
+                word: "day"
+            },
+            {
+                id: 93,
+                word: "he"
+            },
+            {
+                id: 94,
+                word: "loaded"
+            },
+            {
+                id: 95,
+                word: "a"
+            },
+            {
+                id: 96,
+                word: "cotton"
+            },
+            {
+                id: 97,
+                word: "bag"
+            },
+            {
+                id: 98,
+                word: "on"
+            },
+            {
+                id: 99,
+                word: "the"
+            },
+            {
+                id: 100,
+                word: "donkey."
+            }]
         },
         {
             level: 2,
@@ -790,7 +1093,459 @@ const Tester = () => {
         },
         {
             level: 3,
-            wordset: []
+            wordset: [{
+                id: 1,
+                word: "The"
+            },
+            {
+                id: 2,
+                word: "Last"
+            },
+            {
+                id: 3,
+                word: "Leaf,"
+            },
+            {
+                id: 4,
+                word: "short"
+            },
+            {
+                id: 5,
+                word: "story"
+            },
+            {
+                id: 6,
+                word: "by"
+            },
+            {
+                id: 7,
+                word: "O.Henry"
+            },
+            {
+                id: 8,
+                word: "published"
+            },
+            {
+                id: 9,
+                word: "in"
+            },
+            {
+                id: 10,
+                word: "1907"
+            },
+            {
+                id: 11,
+                word: "in"
+            },
+            {
+                id: 12,
+                word: "his"
+            },
+            {
+                id: 13,
+                word: "collection"
+            },
+            {
+                id: 14,
+                word: "The"
+            },
+            {
+                id: 15,
+                word: "Trimmed"
+            },
+            {
+                id: 16,
+                word: "Lamp"
+            },
+            {
+                id: 17,
+                word: "and"
+            },
+            {
+                id: 18,
+                word: "Other"
+            },
+            {
+                id: 19,
+                word: "Stories."
+            },
+            {
+                id: 20,
+                word: "“The"
+            },
+            {
+                id: 21,
+                word: "Last"
+            },
+            {
+                id: 22,
+                word: "Leaf”"
+            },
+            {
+                id: 23,
+                word: "concerns"
+            },
+            {
+                id: 24,
+                word: "Johnsy,"
+            },
+            {
+                id: 25,
+                word: "a"
+            },    
+            {
+                id: 26,
+                word: "poor"
+            },
+            {
+                id: 27,
+                word: "young"
+            },
+            {
+                id: 28,
+                word: "woman"
+            },
+            {
+                id: 29,
+                word: "who"
+            },
+            {
+                id: 30,
+                word: "is"
+            },
+            {
+                id: 31,
+                word: "seriously"
+            },
+            {
+                id: 32,
+                word: "ill"
+            },
+            {
+                id: 33,
+                word: "with"
+            },
+            {
+                id: 34,
+                word: "pneumonia."
+            },
+            {
+                id: 35,
+                word: "She"
+            },
+            {
+                id: 36,
+                word: "believes"
+            },
+            {
+                id: 37,
+                word: "that"
+            },
+            {
+                id: 38,
+                word: "when"
+            },
+            {
+                id: 39,
+                word: "the"
+            },
+            {
+                id: 40,
+                word: "ivy"
+            },
+            {
+                id: 41,
+                word: "vine"
+            },
+            {
+                id: 42,
+                word: "on"
+            },
+            {
+                id: 43,
+                word: "the"
+            },
+            {
+                id: 44,
+                word: "wall"
+            },
+            {
+                id: 45,
+                word: "outside"
+            },
+            {
+                id: 46,
+                word: "her"
+            },
+            {
+                id: 47,
+                word: "window"
+            }, 
+            {
+                id: 48,
+                word: "loses"
+            },
+            {
+                id: 49,
+                word: "all"
+            }, 
+            {
+                id: 50,
+                word: "its"
+            }, 
+            {
+                id: 51,
+                word: "leaves,"
+            },
+            {
+                id: 52,
+                word: "she"
+            },
+            {
+                id: 53,
+                word: "will"
+            },
+            {
+                id: 54,
+                word: "also"
+            },
+            {
+                id: 55,
+                word: "die."
+            },
+            {
+                id: 56,
+                word: "Her"
+            },
+            {
+                id: 57,
+                word: "neighbour"
+            },
+            {
+                id: 58,
+                word: "Behrman"
+            },
+            {
+                id: 59,
+                word: "an"
+            },
+            {
+                id: 60,
+                word: "artist,"
+            },
+            {
+                id: 61,
+                word: "tricks"
+            },
+            {
+                id: 62,
+                word: "her"
+            },
+            {
+                id: 63,
+                word: "by"
+            },
+            {
+                id: 64,
+                word: "painting"
+            },
+            {
+                id: 65,
+                word: "a"
+            },
+            {
+                id: 66,
+                word: "leaf"
+            },
+            {
+                id: 67,
+                word: "on"
+            },
+            {
+                id: 68,
+                word: "the"
+            },
+            {
+                id: 69,
+                word: "wall."
+            },
+            {
+                id: 70,
+                word: "Johnsy"
+            },
+            {
+                id: 71,
+                word: "recovers,"
+            },
+            {
+                id: 72,
+                word: "but"
+            },
+            {
+                id: 73,
+                word: "Behrman,"
+            },
+            {
+                id: 74,
+                word: "who"
+            },
+            {
+                id: 75,
+                word: "caught"
+            },
+            {
+                id: 76,
+                word: "pneumonia"
+            },
+            {
+                id: 77,
+                word: "while"
+            },
+            {
+                id: 78,
+                word: "painting"
+            },
+            {
+                id: 79,
+                word: "leaf"
+            },
+            {
+                id: 80,
+                word: "dies."
+            },
+            {
+                id: 81,
+                word: "The"
+            },
+            {
+                id: 82,
+                word: "story"
+            },
+            {
+                id: 83,
+                word: "is"
+            },
+            {
+                id: 84,
+                word: "based"
+            },
+            {
+                id: 85,
+                word: "on"
+            },
+            {
+                id: 86,
+                word: "theme"
+            },
+            {
+                id: 87,
+                word: "that"
+            },
+            {
+                id: 88,
+                word: "life"
+            },
+            {
+                id: 89,
+                word: "is"
+            },
+            {
+                id: 89,
+                word: "precious"
+            },
+            {
+                id: 90,
+                word: "and"
+            },
+            {
+                id: 91,
+                word: "faith"
+            },
+            {
+                id: 92,
+                word: "and"
+            },
+            {
+                id: 93,
+                word: "hope"
+            },
+            {
+                id: 94,
+                word: "should"
+            },
+            {
+                id: 95,
+                word: "never"
+            },
+            {
+                id: 96,
+                word: "be"
+            },
+            {
+                id: 97,
+                word: "lost."
+            },
+            {
+                id: 98,
+                word: "Another"
+            },
+            {
+                id: 99,
+                word: "theme"
+            },
+            {
+                id: 100,
+                word: "that"
+            },
+            {
+                id: 101,
+                word: "story"
+            },
+            {
+                id: 102,
+                word: "is"
+            },
+            {
+                id: 103,
+                word: "that"
+            },
+            {
+                id: 104,
+                word: "devoted"
+            },
+            {
+                id: 105,
+                word: "friendship"
+            },
+            {
+                id: 106,
+                word: "can"
+            },
+            {
+                id: 107,
+                word: "be"
+            },
+            {
+                id: 108,
+                word: "succour"
+            },
+            {
+                id: 109,
+                word: "during"
+            },
+            {
+                id: 110,
+                word: "times"
+            },
+            {
+                id: 111,
+                word: "of"
+            },
+            {
+                id: 112,
+                word: "crisis."
+            }
+        ]
         }
     ]
     const [requiredWordIndex, setRequiredWordIndex] = useState(0);
@@ -846,6 +1601,8 @@ const Tester = () => {
                 $('#' + nextword).addClass('underline');
                 setAttemptedWords(prevState => prevState + 1);
                 setRequiredWordIndex(prevState => prevState + 1);
+                var p = $( ".requiredWord:first" );
+                $( ".requiredWord:last" ).css( "scrollTop:" + p.scrollTop());
                 setUserLetterInput([]);
             }else if(keyName === "Backspace"){
                 let removed = userLetterInput.filter((_, index) => index !== userLetterInput.length - 1);
@@ -923,7 +1680,9 @@ const Tester = () => {
             return(
                 <React.Fragment>
                     <Navbar/>
-                    <div className="tester" style={{"maxWidth": "100%"}}> 
+                    <div className="tester" style={{"maxWidth": "100%"}}>
+                        <h1>Typing Test</h1>
+                        <p>Start typing in the below box to know your best Words Per Minute Score.</p> 
                         <div className="container-fluid tester-body d-flex my-5 justify-content-center">
                             <div className="col-sm-10 my-5">
                                 <div className="row">
