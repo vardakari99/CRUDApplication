@@ -1,12 +1,13 @@
-import React,{useContext, useEffect, useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import './Tester.css';
 import $ from 'jquery';
 import axios from 'axios';
 import Navbar from './Navbar';
-import Context from '../Context/Context';
-import { Navigate} from 'react-router-dom';
 
-const Tester = () => { 
+const Tester = () => {
+//     const para = "One September night a family had gathered round their hearth, and piled it high with the driftwood of mountain streams, the dry cones of the pine, and the splintered ruins of great trees that had come crashing down the precipice. Up the chimney roared the fire, and brightened the room with its broad blaze. The faces of the father and mother had a sober gladness; the children laughed; the eldest daughter was the image of Happiness at seventeen; and the aged grandmother, who sat knitting in the warmest place, was the image of Happiness grown old.  They had found the herb, hearts-ease in the bleakest spot of all New England."
+//     const extractedWords = para.split(" ");
+//    const requiredWords = extractedWords; 
     const requiredWords = [
         {
             level: 1,
@@ -804,7 +805,6 @@ const Tester = () => {
     const [timeCount, setTimeCount] = useState(60);
     const [testStarted, setTestStarted] = useState(false);
     const [level, setLevel] = useState(0);
-    const context = useContext(Context);
     const userInputHandler = (event) => {
         if(requiredWordIndex < requiredWords[level].wordset.length){
             var requiredObject = level ? requiredWords[level].wordset[requiredWordIndex] : requiredWords[0].wordset[requiredWordIndex];
@@ -919,81 +919,75 @@ const Tester = () => {
         }
     },[testStarted]);
     //check OVERFLOW CONTENT MOVING TO LEFT SIDE in WPM TEST inside laravel-react folder
-        if(context.isLoggedIn === true){
-            return(
-                <React.Fragment>
-                    <Navbar/>
-                    <div className="tester" style={{"maxWidth": "100%"}}> 
-                        <div className="container-fluid tester-body d-flex my-5 justify-content-center">
-                            <div className="col-sm-10 my-5">
-                                <div className="row">
-                                    <div className="circular-counter text-center col-sm-3">
-                                        <svg className="progress-ring-basic" height="120" width="120">
-                                        <circle className="progress-ring__circle__basic" strokeWidth="6" fill="transparent" r="50" cx="60" cy="60" strokeLinecap="round" id="circle2" stroke="#ffd000" style={{"strokeDasharray": 314.159, "strokeDashoffset": 0}}></circle>
-                                        </svg>
-                                        <span className="fw-bold time-counter">{timeCount > 0 ? timeCount : 60}s</span>
+        return(
+            <React.Fragment>
+                <Navbar/>
+                <div className="tester" style={{"maxWidth": "100%"}}> 
+                    <div className="container-fluid tester-body d-flex my-5 justify-content-center">
+                        <div className="col-sm-10 my-5">
+                            <div className="row">
+                                <div className="circular-counter text-center col-sm-3">
+                                    <svg className="progress-ring-basic" height="120" width="120">
+                                    <circle className="progress-ring__circle__basic" strokeWidth="6" fill="transparent" r="50" cx="60" cy="60" strokeLinecap="round" id="circle2" stroke="#ffd000" style={{"strokeDasharray": 314.159, "strokeDashoffset": 0}}></circle>
+                                    </svg>
+                                    <span className="fw-bold time-counter">{timeCount > 0 ? timeCount : 60}s</span>
+                                </div>
+                                <div className="col-sm-9 row m-0 d-flex justify-content-around">
+                                    <div className="col-sm-4 bg-white display-card text-center pt-3">
+                                        <p className='fw-bold'>Accuracy</p>
+                                        <span className="fw-bold">{userAccuracy > 0 ? userAccuracy + ' %' : 0 + ' %'}</span>
                                     </div>
-                                    <div className="col-sm-9 row m-0 d-flex justify-content-around">
-                                        <div className="col-sm-4 bg-white display-card text-center pt-3">
-                                            <p className='fw-bold'>Accuracy</p>
-                                            <span className="fw-bold">{userAccuracy > 0 ? userAccuracy + ' %' : 0 + ' %'}</span>
-                                        </div>
-                                        <div className="col-sm-4 bg-white display-card text-center pt-3">
-                                            <p className='fw-bold'>Words/min</p>
-                                            <span className="fw-bold">{ userWpmScore > 0 ? userWpmScore + ' WPM' : 0 + ' WPM'}</span>
-                                        </div>
-                                        <div className="col-sm-4 bg-white display-card text-center pt-3">
-                                            <p className='fw-bold'>Errors</p>
-                                            <span className="fw-bold">{incorrectWords}/{attemptedWords}</span>
-                                        </div>
+                                    <div className="col-sm-4 bg-white display-card text-center pt-3">
+                                        <p className='fw-bold'>Words/min</p>
+                                        <span className="fw-bold">{ userWpmScore > 0 ? userWpmScore + ' WPM' : 0 + ' WPM'}</span>
+                                    </div>
+                                    <div className="col-sm-4 bg-white display-card text-center pt-3">
+                                        <p className='fw-bold'>Errors</p>
+                                        <span className="fw-bold">{incorrectWords}/{attemptedWords}</span>
                                     </div>
                                 </div>
-                                <div className="row justify-content-center menu-row mt-5">
-                                    <div className="d-flex col-sm-5 offset-sm-1 col-12">
-                                        <p className="mr-1 my-auto text-white">Modes</p>
-                                        <button className="btn mx-2 menu-btn" onClick={() => setTimeCounter(60)}>1 Minute</button>
-                                        <button className="btn mx-2 menu-btn" onClick={() => setTimeCounter(180)}>3 Minute</button>
-                                        <button className="btn mx-2 menu-btn" onClick={() => setTimeCounter(300)}>5 Minute</button>
+                            </div>
+                            <div className="row justify-content-center menu-row mt-5">
+                                <div className="d-flex col-sm-5 offset-sm-1 col-12">
+                                    <p className="mr-1 my-auto text-white">Modes</p>
+                                    <button className="btn mx-2 menu-btn" onClick={() => setTimeCounter(60)}>1 Minute</button>
+                                    <button className="btn mx-2 menu-btn" onClick={() => setTimeCounter(180)}>3 Minute</button>
+                                    <button className="btn mx-2 menu-btn" onClick={() => setTimeCounter(300)}>5 Minute</button>
+                                </div>
+                            </div>
+                            <div className="row justify-content-center task-row mt-5">
+                                <div className="task-card">
+                                    <div className="word-section">
+                                    {requiredWords[level].wordset.map((requiredWord)=> (
+                                        <span className="requiredWord" id={requiredWord.id} key={requiredWord.id}>{requiredWord.word}</span>
+                                    ))}
                                     </div>
                                 </div>
-                                <div className="row justify-content-center task-row mt-5">
-                                    <div className="task-card">
-                                        <div className="word-section">
-                                        {requiredWords[level].wordset.map((requiredWord)=> (
-                                            <span className="requiredWord" id={requiredWord.id} key={requiredWord.id}>{requiredWord.word}</span>
-                                        ))}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="row input-row mt-4">
-                                    <input className="form-control mx-auto user-typebox" placeholder="Start Typing..." onKeyDown={userInputHandler}/>
-                                </div>
+                            </div>
+                            <div className="row input-row mt-4">
+                                <input className="form-control mx-auto user-typebox" placeholder="Start Typing..." onKeyDown={userInputHandler}/>
                             </div>
                         </div>
                     </div>
-                    <div className="modal" tabIndex="-1" role="dialog">
-                    <div className="modal-dialog" role="document">
-                        <div className="modal-content bg-dark text-white">
-                        <div className="modal-header">
-                            <h5 className="modal-title">Thank you for taking the test!</h5>
-                            <button type="button" className="close bg-dark text-white" data-dismiss="modal" aria-label="Close" onClick={()=>{$(".modal").hide()}}>
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            <p>You have a typing speed of { userWpmScore > 0 ? userWpmScore + ' WPM' : 0 + ' WPM'}.</p>
-                            <p>Your Accuracy was {userAccuracy > 0 ? userAccuracy + ' %' : 0 + ' %'}!</p>
-                        </div>
-                        </div>
+                </div>
+                <div className="modal" tabIndex="-1" role="dialog">
+                <div className="modal-dialog" role="document">
+                    <div className="modal-content bg-dark text-white">
+                    <div className="modal-header">
+                        <h5 className="modal-title">Thank you for taking the test!</h5>
+                        <button type="button" className="close bg-dark text-white" data-dismiss="modal" aria-label="Close" onClick={()=>{$(".modal").hide()}}>
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div className="modal-body">
+                        <p>You have a typing speed of { userWpmScore > 0 ? userWpmScore + ' WPM' : 0 + ' WPM'}.</p>
+                        <p>Your Accuracy was {userAccuracy > 0 ? userAccuracy + ' %' : 0 + ' %'}!</p>
                     </div>
                     </div>
-                </React.Fragment>
-            )
-        }else{
-            return(
-               <Navigate to="/"/>
-            )
-        }
+                </div>
+                </div>
+            </React.Fragment>
+        )
     }
  
 export default Tester;
