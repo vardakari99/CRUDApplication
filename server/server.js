@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 var express = require('express');
 const e = require('cors');
+const nodemailer = require('nodemailer');
+const { application } = require('express');
 const app = express();
 
 var connection = mysql.createConnection({
@@ -16,20 +18,6 @@ var connection = mysql.createConnection({
 connection.connect(function(err) {
   if (err) throw err;
   console.log('connected!');
-  
-
-    //getting the id of user previously registered to db
-    //const sql = "SELECT id FROM user WHERE name = 'Gaurav'";
-    //connection.query(sql, function (err, result) {
-    //if (err) throw err;
-    //console.log(result[0].id); //store inside a variable
-    //});
-
-    // const sql = "INSERT INTO report(id, reportId,accuracy, wpmScore, timeSpan) VALUES(1, 1, 80, 30, 1)";
-    // connection.query(sql, function (err, result) {
-    //     if (err) throw err;
-    //     console.log(result);
-    // });
 });
 
 app.use(express.json());
@@ -96,11 +84,92 @@ app.post("/api/insert/user/report", (req, res)=>{
     });
     res.status(404).send('Unable to find the requested resource!');
     res.header("Access-Control-Allow-Origin", "*")
+});
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'varda.kari99@gmail.com',
+      pass: 'bvrslggpcjaievqq'
+    }
+  });
+  function generateOTP() {
+    // Declare a string variable 
+    // which stores all string
+    var string = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var OTP = '';
+    // Find the length of string
+    var len = string.length;
+    for (let i = 0; i < 6; i++ ) {
+        OTP += string[Math.floor(Math.random() * len)];
+    }
+    return OTP;
+  }
+app.post("/api/insert/user/verify", (req, res) => {
+    const email = req.body.email;
+    const verifycode = generateOTP();
+    const findCode = "SELECT email FROM user_verification WHERE email = (?)";
+        connection.query(findCode,[email], function (err, result) {
+            console.log(result);
+            if(result.length == 0){
+                //when no email found
+                const insertCode = "INSERT INTO user_verification(email, verifycode) VALUES(?,?)";
+                connection.query(insertCode,[email, verifycode], function (err, result) {
+                    if (err){
+                        console.log(err);
+                    }
+                })
+            }else{
+                const updateCode = "UPDATE user_verification SET verifycode = (?) WHERE email = (?)";
+                connection.query(updateCode,[verifycode, email], function (err, result) {
+                    if (err){
+                        console.log(err);
+                    }
+                })
+            }
+    })
+    var mailOptions = {
+        from: 'varda.kari99@gmail.com', //domain email
+        to: req.body.email, //req.body.email
+        subject: 'Sending Email using Node.js', //otp for email verification
+        text: `That was easy!\n Your OTP is ${verifycode}` //req.body.otp
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+      }); 
+    // res.status(404).send('Unable to find the requested resource!');
+    res.header("Access-Control-Allow-Origin", "*")
+    res.status(404).send('Unable to find the requested resource!');
 })
+app.post("/api/insert/user/verify/email", (req, res)=>{
+    let postHeader = [
+        'Access-Control-Allow-Origin', '*',
+        'Access-Control-Allow-Methods', 'POST',
+        'Access-Control-Allow-Headers', 'X-Requested-With,content-type',
+        'Access-Control-Allow-Credentials', 'true',
+        'Content-Type', 'application/json'
+      ]
+      res.header(postHeader);
+    const email = req.body.email;
+    const usercode = req.body.verifycode;
+    const sql = "SELECT verifycode FROM user_verification WHERE email = (?)";
+    connection.query(sql,[email], function (err, result) {
+        if (err) throw err;
+        const isMatched = usercode.localeCompare(result[0].verifycode);
+        console.log(isMatched);
+        if(isMatched === 0){
+            console.log("matched");
+        }
+    });
+    res.send(JSON.stringify({loggedIn: true}));
+    res.end();
+})
+
 
 app.listen(3001, ()=>{
     console.log("running on port 3001");
 })
-
-
-//routing
