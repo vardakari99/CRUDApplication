@@ -367,51 +367,51 @@ const Tester = () => {
                 word: "to"
             },
             {
-                id: 89,
+                id: 90,
                 word: "it."
             },
             {
-                id: 90,
+                id: 91,
                 word: "The"
             },
             {
-                id: 91,
+                id: 92,
                 word: "next"
             },
             {
-                id: 92,
+                id: 93,
                 word: "day"
             },
             {
-                id: 93,
+                id: 94,
                 word: "he"
             },
             {
-                id: 94,
+                id: 95,
                 word: "loaded"
             },
             {
-                id: 95,
+                id: 96,
                 word: "a"
             },
             {
-                id: 96,
+                id: 97,
                 word: "cotton"
             },
             {
-                id: 97,
+                id: 98,
                 word: "bag"
             },
             {
-                id: 98,
+                id: 99,
                 word: "on"
             },
             {
-                id: 99,
+                id: 100,
                 word: "the"
             },
             {
-                id: 100,
+                id: 101,
                 word: "donkey."
             }]
         },
@@ -1558,6 +1558,7 @@ const Tester = () => {
     const [userWpmScore, setUserWpmScore] = useState(0);
     const [timeCount, setTimeCount] = useState(60);
     const [testStarted, setTestStarted] = useState(false);
+    const [showReport, setShowReport] = useState(false);
     const [level, setLevel] = useState(0);
     const context = useContext(Context);
     const userInputHandler = (event) => {
@@ -1616,13 +1617,15 @@ const Tester = () => {
         if (timeCount > 0) {
           setTimeout(timecountHandler, 1000);
         }else{
+            setTestStarted(false);
             setTimeCount(60);
+            setShowReport(true);
         }
     }
     const calculateAccuracy = (incorrectWords, attemptedWords) => {
         const correctWords = attemptedWords - incorrectWords;
         setCorrectWords(correctWords);
-        const attempedby5 = attemptedWords/5;
+        const attempedby5 = attemptedWords;
         const grossWpm = attempedby5 / (timeCount/60);
         const numerator = attempedby5 - incorrectWords;
         const netWpm = numerator / (timeCount/60);
@@ -1677,60 +1680,122 @@ const Tester = () => {
     },[testStarted]);
     //check OVERFLOW CONTENT MOVING TO LEFT SIDE in WPM TEST inside laravel-react folder
         if(context.isLoggedIn === true){
-            return(
-                <React.Fragment>
-                    <Navbar/>
-                    <div className="tester" style={{"maxWidth": "100%"}}>
-                        <h1>Typing Test</h1>
-                        <p>Start typing in the below box to know your best Words Per Minute Score.</p> 
-                        <div className="container-fluid tester-body d-flex my-5 justify-content-center">
-                            <div className="col-sm-10 my-5">
-                                <div className="row">
-                                    <div className="circular-counter text-center col-sm-3">
-                                        <svg className="progress-ring-basic" height="120" width="120">
-                                        <circle className="progress-ring__circle__basic" strokeWidth="6" fill="transparent" r="50" cx="60" cy="60" strokeLinecap="round" id="circle2" stroke="#ffd000" style={{"strokeDasharray": 314.159, "strokeDashoffset": 0}}></circle>
-                                        </svg>
-                                        <span className="fw-bold time-counter">{timeCount > 0 ? timeCount : 60}s</span>
-                                    </div>
-                                    <div className="col-sm-9 row m-0 d-flex justify-content-around">
-                                        <div className="col-sm-4 bg-white display-card text-center pt-3">
-                                            <p className='fw-bold'>Accuracy</p>
-                                            <span className="fw-bold">{userAccuracy > 0 ? userAccuracy + ' %' : 0 + ' %'}</span>
-                                        </div>
-                                        <div className="col-sm-4 bg-white display-card text-center pt-3">
-                                            <p className='fw-bold'>Words/min</p>
-                                            <span className="fw-bold">{ userWpmScore > 0 ? userWpmScore + ' WPM' : 0 + ' WPM'}</span>
-                                        </div>
-                                        <div className="col-sm-4 bg-white display-card text-center pt-3">
-                                            <p className='fw-bold'>Errors</p>
-                                            <span className="fw-bold">{incorrectWords}/{attemptedWords}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="row justify-content-center menu-row mt-5">
-                                    <div className="d-flex col-sm-5 offset-sm-1 col-12">
-                                        <p className="mr-1 my-auto text-white">Modes</p>
-                                        <button className="btn mx-2 menu-btn" onClick={() => setTimeCounter(60)}>1 Minute</button>
-                                        <button className="btn mx-2 menu-btn" onClick={() => setTimeCounter(180)}>3 Minute</button>
-                                        <button className="btn mx-2 menu-btn" onClick={() => setTimeCounter(300)}>5 Minute</button>
-                                    </div>
-                                </div>
-                                <div className="row justify-content-center task-row mt-5">
-                                    <div className="task-card">
-                                        <div className="word-section">
-                                        {requiredWords[level].wordset.map((requiredWord)=> (
-                                            <span className="requiredWord" id={requiredWord.id} key={requiredWord.id}>{requiredWord.word}</span>
-                                        ))}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="row input-row mt-4">
-                                    <input className="form-control mx-auto user-typebox" placeholder="Start Typing..." onKeyDown={userInputHandler}/>
-                                </div>
+            return (
+              <React.Fragment>
+                <Navbar />
+                <div className="tester" style={{ maxWidth: "100%" }}>
+                  <h1 className="text-center">Typing Test</h1>
+                  <p className="text-center my-3">
+                    Start typing in the below box to know your best Words Per
+                    Minute Score.
+                  </p>
+                  <div className="container-fluid tester-body d-flex justify-content-center">
+                    {!showReport && (
+                      <div className="col-sm-10">
+                        <div className="row">
+                          <div className="circular-counter text-center col-sm-3">
+                            <svg
+                              className="progress-ring-basic"
+                              height="120"
+                              width="120"
+                            >
+                              <circle
+                                className="progress-ring__circle__basic"
+                                strokeWidth="6"
+                                fill="transparent"
+                                r="50"
+                                cx="60"
+                                cy="60"
+                                strokeLinecap="round"
+                                id="circle2"
+                                stroke="#ffd000"
+                                style={{
+                                  strokeDasharray: 314.159,
+                                  strokeDashoffset: 0,
+                                }}
+                              ></circle>
+                            </svg>
+                            <span className="fw-bold time-counter">
+                              {timeCount > 0 ? timeCount : 60}s
+                            </span>
+                          </div>
+                          <div className="col-sm-9 row m-0 d-flex justify-content-around">
+                            <div className="col-sm-4 bg-white display-card text-center pt-3">
+                              <p className="fw-bold h4">Accuracy</p>
+                              <span className="fw-bold h5">
+                                {userAccuracy > 0
+                                  ? userAccuracy + " %"
+                                  : 0 + " %"}
+                              </span>
                             </div>
+                            <div className="col-sm-4 bg-white display-card text-center pt-3">
+                              <p className="fw-bold h4">Words/min</p>
+                              <span className="fw-bold h5">
+                                {userWpmScore > 0
+                                  ? userWpmScore + " WPM"
+                                  : 0 + " WPM"}
+                              </span>
+                            </div>
+                            <div className="col-sm-4 bg-white display-card text-center pt-3">
+                              <p className="fw-bold h4">Errors</p>
+                              <span className="fw-bold h5">
+                                {incorrectWords}/{attemptedWords}
+                              </span>
+                            </div>
+                          </div>
                         </div>
-                    </div>
-                    <div className="modal" tabIndex="-1" role="dialog">
+                        <div className="row justify-content-center menu-row mt-5">
+                          <div className="d-flex col-sm-5 offset-sm-1 col-12">
+                            <p className="mr-1 my-auto">Time Modes</p>
+                            <button
+                              className="btn mx-2 menu-btn"
+                              onClick={() => setTimeCounter(60)}
+                            >
+                              1 Minute
+                            </button>
+                            <button
+                              className="btn mx-2 menu-btn"
+                              onClick={() => setTimeCounter(180)}
+                            >
+                              3 Minute
+                            </button>
+                            <button
+                              className="btn mx-2 menu-btn"
+                              onClick={() => setTimeCounter(300)}
+                            >
+                              5 Minute
+                            </button>
+                          </div>
+                        </div>
+                        <div className="row justify-content-center task-row mt-5">
+                          <div className="task-card">
+                            <div className="word-section">
+                              {requiredWords[level].wordset.map(
+                                (requiredWord) => (
+                                  <span
+                                    className="requiredWord"
+                                    id={requiredWord.id}
+                                    key={requiredWord.id}
+                                  >
+                                    {requiredWord.word}
+                                  </span>
+                                )
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row input-row mt-4">
+                          <input
+                            className="form-control mx-auto user-typebox"
+                            placeholder="Start Typing..."
+                            onKeyDown={userInputHandler}
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                {/* <div className="modal" tabIndex="-1" role="dialog">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content bg-dark text-white">
                         <div className="modal-header">
@@ -1745,9 +1810,46 @@ const Tester = () => {
                         </div>
                         </div>
                     </div>
+                    </div> */}
+                {showReport === true && (
+                  <div className="container" style={{ maxWidth: "50rem", height: "20rem"}}>
+                    <div id="cards_landscape_wrap-2 h-100">
+                      <div className="container h-100">
+                        <div className="row h-100">
+                          <div className="col-xs-12 h-100 p-0">
+                              <div className="card-flyer">
+                                <div className="text-box row m-0 h-100">
+                                  <div className="image-box col-sm-4 p-0">
+                                    <img
+                                      src="https://cdn.pixabay.com/photo/2018/03/30/15/11/deer-3275594_960_720.jpg"
+                                      alt="img"
+                                    />
+                                  </div>
+                                  <div className="text-container col-sm-8 p-4">
+                                    <h3 className='fw-bold h3 py-3'>Thank you for taking the test!</h3>
+                                    <div className='pt-4'>
+                                        <h4> You Typed with a speed of &nbsp;
+                                            <span className='text-warning'>{userWpmScore > 0 ? userWpmScore + " WPM" : 0 + " WPM"}.</span>
+                                        </h4>
+                                        <h5>The Accuracy of your typing was &nbsp;
+                                            <span className='text-primary'>{userAccuracy > 0 ? userAccuracy + " %" : 0 + " %"}</span>
+                                        </h5>
+                                    </div>
+                                    <div className='mt-3'>
+                                    <p className='py-3'>You can do better on your next turn. Click below to take the test again!</p>
+                                    <button>Reappear Test</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                </React.Fragment>
-            )
+                  </div>
+                )}
+              </React.Fragment>
+            );
         }else{
             return(
                <Navigate to="/"/>

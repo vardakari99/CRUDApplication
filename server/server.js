@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 var user_id = null;
 app.post("/api/insert/user", (req, res)=>{
     const email = req.body.email;
-    console.log(email);
+    // console.log(email);
     //insert from landing page
     // find email
     // if(email){
@@ -48,21 +48,26 @@ app.post("/api/insert/user", (req, res)=>{
     // }
     const findEmail = "SELECT email from user_details WHERE email = (?)";
         connection.query(findEmail,[email], function (err, result) {
-            if(result.length == 0){
+            if(result.length === 0){
                 //when no email found
                 const insertEmail = "INSERT INTO user_details(email) VALUES(?)";
                 connection.query(insertEmail,[email], function (err, result) {
                     if (err){
                         console.log("error has come");
+                        return res.status(404).send('Unable to find the requested resource!');
                     }
                     // console.log(result);
                     user_id = result.insertId;
-                    console.log(user_id);
+                    // console.log(user_id);
                 })
             }else{
-                console.log(result[0].id);
+                // console.log(result[0].id);
                 user_id = result[0].id;
             }
+
+            res.status(200).json({
+                status: 'succes'
+            })
     })
     res.header("Access-Control-Allow-Origin", "*")
 })
@@ -70,24 +75,29 @@ app.post("/api/insert/user/report", (req, res)=>{
     const accuracy = req.body.accuracy;
     const wpmScore = req.body.wpmScore;
     const timeSpan = req.body.timeSpan;
-    console.log(accuracy, wpmScore, timeSpan);
+    // console.log(accuracy, wpmScore, timeSpan);
     //insert from landing page
     //make userid and reportid dynamic
     const time = new Date();
-    console.log(time);
+    // console.log(time);
     const sql = "INSERT INTO test_record(user_id, time_mode, accuracy, wpm_score, test_time) VALUES (?,?,?,?,?)";
     connection.query(sql,[user_id, timeSpan, accuracy, wpmScore, time], function (err, result) {
-        if (err) throw err;
+        if (err){
+            return res.status(404).send('Unable to find the requested resource!');
+        };
         console.log(result);
+        res.status(200).json({
+            status: 'success',
+            data: req.body,
+        })
     });
-    res.status(404).send('Unable to find the requested resource!');
     res.header("Access-Control-Allow-Origin", "*")
 });
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: 'varda.kari99@gmail.com',
-      pass: 'bvrslggpcjaievqq'
+      pass: 'izmmxolpqksvlcxd'
     }
   });
   function generateOTP() {
@@ -135,13 +145,17 @@ app.post("/api/insert/user/verify", (req, res) => {
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
           console.log(error);
+          res.status(404).send('Unable to find the requested resource!');
         } else {
           console.log('Email sent: ' + info.response);
+            return res.status(200).json({
+                status: 'succes',
+                data: req.body,
+            }) 
         }
       }); 
     // res.status(404).send('Unable to find the requested resource!');
     res.header("Access-Control-Allow-Origin", "*")
-    res.status(404).send('Unable to find the requested resource!');
 })
 app.post("/api/insert/user/verify/email", (req, res)=>{
     let postHeader = [
@@ -151,20 +165,30 @@ app.post("/api/insert/user/verify/email", (req, res)=>{
         'Access-Control-Allow-Credentials', 'true',
         'Content-Type', 'application/json'
       ]
-      res.header(postHeader);
     const email = req.body.email;
     const usercode = req.body.verifycode;
     const sql = "SELECT verifycode FROM user_verification WHERE email = (?)";
     connection.query(sql,[email], function (err, result) {
         if (err) throw err;
-        const isMatched = usercode.localeCompare(result[0].verifycode);
+        let isMatched = usercode.localeCompare(result[0].verifycode);
+        console.log(usercode);
+        console.log(result);
+        console.log(result[0].verifycode);
+        res.header(postHeader);
         console.log(isMatched);
-        if(isMatched === 0){
-            console.log("matched");
+        if (isMatched === 0) {
+            res.status(200).json({
+                status: 'succes',
+                data: {"loggedIn": "true"},
+            })
+        }else{
+            return res.status(400).json({
+                status: 'error',
+                error: 'OTP do not match',
+            });
         }
     });
-    res.send(JSON.stringify({loggedIn: true}));
-    res.end();
+    // res.end();
 })
 
 
