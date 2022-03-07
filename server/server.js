@@ -9,10 +9,16 @@ var connection = mysql.createConnection({
   host: 'localhost',
   port: 3309,
   user: 'root',
-  password: '12345',
+  password: '',
   database: 'typing_test'
 });
-
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'joshigaurav301@gmail.com',
+      pass: 'tjhnigltrzgppzga'
+    }
+  });
 connection.connect(function(err) {
   if (err) throw err;
   console.log('connected!');
@@ -83,23 +89,37 @@ app.post("/api/insert/user/report", (req, res)=>{
     const sql = "INSERT INTO test_record(user_id, time_mode, accuracy, wpm_score, test_time) VALUES (?,?,?,?,?)";
     connection.query(sql,[user_id, timeSpan, accuracy, wpmScore, time], function (err, result) {
         if (err){
+            console.log(err)
             return res.status(404).send('Unable to find the requested resource!');
         };
         console.log(result);
-        res.status(200).json({
-            status: 'success',
-            data: req.body,
-        })
+    //   //  res.status(200).json({
+    //         status: 'success',
+    //          data: req.body,
+    //     })
     });
     res.header("Access-Control-Allow-Origin", "*")
+    var mailOptions = {
+        from: 'joshigaurav301@gmail.com', //domain email
+        to: req.body.email, //req.body.email
+        subject: 'Sending Email using Node.js', //otp for email verification
+        text: `That was easy!\n Your OTP is ${accuracy}` //req.body.otp
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+          res.status(404).send('Unable to find the requested resource!');
+        } else {
+          console.log('Email sent: ' + info.response);
+            return res.status(200).json({
+                status: 'succes',
+                data: req.body,
+            }) 
+        }
+      }); 
 });
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'varda.kari99@gmail.com',
-      pass: 'izmmxolpqksvlcxd'
-    }
-  });
+
   function generateOTP() {
     // Declare a string variable 
     // which stores all string
@@ -136,7 +156,7 @@ app.post("/api/insert/user/verify", (req, res) => {
             }
     })
     var mailOptions = {
-        from: 'varda.kari99@gmail.com', //domain email
+        from: 'joshigaurav301@gmail.com', //domain email
         to: req.body.email, //req.body.email
         subject: 'Sending Email using Node.js', //otp for email verification
         text: `That was easy!\n Your OTP is ${verifycode}` //req.body.otp
