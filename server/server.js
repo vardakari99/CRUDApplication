@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 var express = require('express');
 const nodemailer = require('nodemailer');
+const hbs = require('nodemailer-express-handlebars');
+const path = require('path');
 const app = express();
 
 var connection = mysql.createConnection({
@@ -15,10 +17,11 @@ var connection = mysql.createConnection({
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'joshigaurav301@gmail.com',
-      pass: 'tjhnigltrzgppzga'
+      user: 'varda.kari99@gmail.com',
+      pass: 'izmmxolpqksvlcxd'
     }
-  });
+});
+// point to the template folder
 connection.connect(function(err) {
   if (err) throw err;
   console.log('connected!');
@@ -81,29 +84,57 @@ app.post("/api/insert/user/report", (req, res)=>{
     const accuracy = req.body.accuracy;
     const wpmScore = req.body.wpmScore;
     const timeSpan = req.body.timeSpan;
+    const email = req.body.email;
+    console.log(accuracy);
     // console.log(accuracy, wpmScore, timeSpan);
     //insert from landing page
     //make userid and reportid dynamic
     const time = new Date();
-    // console.log(time);
-    const sql = "INSERT INTO test_record(user_id, time_mode, accuracy, wpm_score, test_time) VALUES (?,?,?,?,?)";
-    connection.query(sql,[user_id, timeSpan, accuracy, wpmScore, time], function (err, result) {
-        if (err){
-            console.log(err)
-            return res.status(404).send('Unable to find the requested resource!');
-        };
-        console.log(result);
-    //   //  res.status(200).json({
-    //         status: 'success',
-    //          data: req.body,
-    //     })
-    });
+    const findId = "SELECT id FROM user_details WHERE email = (?)";
+        connection.query(findId,[email], function (err, result) {
+            console.log(result);
+            if(result === null){
+                //when no email found
+                return res.status(404).json({
+                    status: 'error',
+                    data: req.body,
+                }) 
+            }else{
+                user_id = result[0].id;
+                const sql = "INSERT INTO test_record(user_id, time_mode, accuracy, wpm_score, test_time) VALUES (?,?,?,?,?)";
+                connection.query(sql,[user_id, timeSpan, accuracy, wpmScore, time], function (err, result) {
+                    if (err){
+                        console.log(err)
+                    };
+                    console.log(result);
+                })
+                console.log("id found")
+            }
+    })
     res.header("Access-Control-Allow-Origin", "*")
+    const handlebarOptions = {
+        viewEngine: {
+            partialsDir: path.resolve('./views/'),
+            defaultLayout: false,
+        },
+        viewPath: path.resolve('./views/'),
+    };
+    
+    // use a template file with nodemailer
+    transporter.use('compile', hbs(handlebarOptions))
     var mailOptions = {
-        from: 'joshigaurav301@gmail.com', //domain email
+        from: 'varda.kari99@gmail.com', //domain email
         to: req.body.email, //req.body.email
-        subject: 'Sending Email using Node.js', //otp for email verification
-        text: `That was easy!\n Your OTP is ${accuracy}` //req.body.otp
+        subject: 'Typing Test Report', //otp for email verification
+        template: 'reportEmail',
+        text: `That was easy!\n Your Accuracy is ${accuracy}`, //req.body.accuracy
+        context:{
+            email: email,
+            accuracy: accuracy, // replace {{name}} with Adebola
+            wpm: wpmScore, // replace {{company}} with My Company
+            level: timeSpan,
+            time: time
+        }
     };
 
     transporter.sendMail(mailOptions, function(error, info){
@@ -156,10 +187,10 @@ app.post("/api/insert/user/verify", (req, res) => {
             }
     })
     var mailOptions = {
-        from: 'joshigaurav301@gmail.com', //domain email
+        from: 'varda.kari99@gmail.com', //domain email
         to: req.body.email, //req.body.email
-        subject: 'Sending Email using Node.js', //otp for email verification
-        text: `That was easy!\n Your OTP is ${verifycode}` //req.body.otp
+        subject: 'OTP Verification Typing Test', //otp for email verification
+        html: `<p>You are one step behind of taking the test!<b>Your OTP is <h2>${verifycode}</h2><b></p>` //req.body.otp
     };
 
     transporter.sendMail(mailOptions, function(error, info){

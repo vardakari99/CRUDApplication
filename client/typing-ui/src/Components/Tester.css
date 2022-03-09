@@ -3,32 +3,24 @@
 }
 .display-card{
     border-radius: 22px;
-    border: 1px solid #354b60;
     max-width: 280px;
+    width: 10rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 }
 .menu-btn{
-    background-color: #fff !important;
+    background-color: #fff;
     border: 1px solid rgba(0,0,0,.125) !important;
     border-radius: 8px!important;
     padding: 0.3rem 0.6rem 0.3rem !important;
-    font-size: 14px !important;
+    font-size: 17px !important;
 }
-.menu-btn:active{
-    color: #fff !important;
-    background-color: #0062cc !important;
-    border-color: #005cbf !important;
-}
-.menu-btn:focus{
-    color: #fff !important;
-    background-color: #14c39a !important;
-    border-color: #14c39a !important;
-}
-.task-card{
-    border-radius: 15px !important;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-    padding: 0.5rem 1rem;
-    background-color: #fff;
-}
+.active-bg{
+    border: 3px dashed blueviolet !important;
+    color: blueviolet;
+  }
+  .btn:focus{
+      box-shadow: 0 0 0 0.25rem hsl(271, 76%, 53%, 25%);
+  }
 .form-control{
     width: 80% !important;
 }
@@ -43,13 +35,12 @@
 }
 .time-counter{
     position: absolute;
-    left: 13.3em;
-    top: 14.7rem;
+    top: 15.3rem;
     font-size: 24px;
     color: #000;
 }
 .word-section{
-    height: 8em;
+    height: fit-content;
     line-height: 2em;
     border-radius: .25em;
     position: relative;
@@ -61,7 +52,7 @@
     margin-left: .2em;
 }
 .user-typebox::placeholder{
-    color: #25c7a1 !important;
+    color: #9b50ba !important;
     font-size: 32px !important;
 }
 .user-typebox:focus{
@@ -97,46 +88,35 @@
     color: #dd2525;
 }
 .underline{
-    color: #0062cc;
+    color: #ffa600;
     font-weight: 500;
     /* text-decoration: underline 3px solid #2fd8d8; */
 }
 
 /* cards */
-/*----  Main Style  ----*/
 #cards_landscape_wrap-2{
     text-align: center;
     background: #F7F7F7;
-  }
-  #cards_landscape_wrap-2 a{
-    text-decoration: none;
-    outline: none;
+    border: 3px dashed #9b50ba;
+    border-radius: 5px;
+    height: fit-content;
   }
   #cards_landscape_wrap-2 .card-flyer {
-    border-radius: 5px;
+    border-radius: inherit;
   }
   #cards_landscape_wrap-2 .card-flyer .image-box{
-    background: #ffffff;
+    background: transparent;
     overflow: hidden;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.50);
+    box-shadow: 0px 0px 4px rgb(0 0 0 / 50%);
     border-radius: 5px;
     height: fit-content;
   }
   #cards_landscape_wrap-2 .card-flyer .image-box img{
-    -webkit-transition:all .9s ease; 
-    -moz-transition:all .9s ease; 
-    -o-transition:all .9s ease;
-    -ms-transition:all .9s ease; 
-    width: 100% !important;
+    transition:all .9s ease; 
     height: 20rem;
   }
   #cards_landscape_wrap-2 .card-flyer:hover .image-box img{
-    opacity: 0.7;
-    -webkit-transform:scale(1.15);
-    -moz-transform:scale(1.15);
-    -ms-transform:scale(1.15);
-    -o-transform:scale(1.15);
-    transform:scale(1.15);
+    transform:scale(1.05);
   }
   #cards_landscape_wrap-2 .card-flyer .text-box{
     text-align: center;
@@ -145,11 +125,11 @@
     background: #FFFFFF;
     height: 20rem;
     width: 100%;
-    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.40);
+    box-shadow: 0px 0px 0px #9b50ba;
   }
   #cards_landscape_wrap-2 .card-flyer:hover{
     background: #fff;
-    box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.50);
+    box-shadow: 0px 1px 10px #9b50ba;
   }
   #cards_landscape_wrap-2 .card-flyer .text-box p{
     margin-top: 10px;
@@ -162,5 +142,4 @@
   #cards_landscape_wrap-2 .card-flyer .text-box h6{
     font-family: 'Roboto Black', sans-serif;
     letter-spacing: 1px;
-    color: #00acc1;
   }

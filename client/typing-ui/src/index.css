@@ -13,8 +13,23 @@ code {
 }
 
 .bg-theme{
-  background-color: #c2f8fd80 !important;
+  background-color: #d8aeffc0 !important;
 }
 .bg-theme-secondary, .btn-theme-secondary{
   background-color:	#ffd000 !important;
+}
+.btn-theme{
+  background: #8a2be2 !important;
+}
+.text-theme{
+  color: blueviolet !important;
+}
+.border-theme{
+  border: 3px solid blueviolet !important;
+}
+.task-card{
+  border-radius: 15px !important;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
 }

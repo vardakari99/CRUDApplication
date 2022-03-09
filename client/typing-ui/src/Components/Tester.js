@@ -419,682 +419,6 @@ const Tester = () => {
             level: 2,
             wordset: [{
                 id: 1,
-                word: "An"
-            },
-        {
-                id: 2,
-                word: "old"
-            },
-            {
-                id: 3,
-                word: "man"
-            },
-            {
-                id: 4,
-                word: "lived"
-            },
-            {
-                id: 5,
-                word: "in"
-            },
-            {
-                id: 6,
-                word: "the"
-            },
-            {
-                id: 7,
-                word: "village."
-            },
-            {
-                id: 8,
-                word: "He"
-            },
-            {
-                id: 9,
-                word: "was"
-            },
-            {
-                id: 10,
-                word: "one"
-            },
-            {
-                id: 11,
-                word: "of"
-            },
-            {
-                id: 12,
-                word: "the"
-            },
-            {
-                id: 13,
-                word: "most"
-            },
-            {
-                id: 14,
-                word: "unfortunate"
-            },
-            {
-                id: 15,
-                word: "people"
-            },
-            {
-                id: 16,
-                word: "in"
-            },
-            {
-                id: 17,
-                word: "the"
-            },
-            {
-                id: 18,
-                word: "world."
-            },
-            {
-                id: 19,
-                word: "The"
-            },
-            {
-                id: 20,
-                word: "whole"
-            },
-            {
-                id: 21,
-                word: "village"
-            },
-            {
-                id: 22,
-                word: "was"
-            },
-            {
-                id: 23,
-                word: "tired"
-            },
-            {
-                id: 24,
-                word: "of"
-            },
-            {
-                id: 25,
-                word: "him\;"
-            },
-            {
-                id: 26,
-                word: "he"
-            },
-            {
-                id: 27,
-                word: "was"
-            },
-            {
-                id: 28,
-                word: "always"
-            },
-            {
-                id: 29,
-                word: "gloomy,"
-            },
-            {
-                id: 30,
-                word: "he"
-            },
-            {
-                id: 31,
-                word: "constantly"
-            },
-            {
-                id: 32,
-                word: "The"
-            },
-            {
-                id: 33,
-                word: "complained"
-            },
-            {
-                id: 34,
-                word: "and"
-            },
-            {
-                id: 35,
-                word: "was"
-            },
-            {
-                id: 36,
-                word: "always"
-            },
-            {
-                id: 37,
-                word: "in"
-            },
-            {
-                id: 38,
-                word: "a"
-            },
-            {
-                id: 39,
-                word: "bad"
-            },
-            {
-                id: 40,
-                word: "mood."
-            },
-            {
-                id: 41,
-                word: "The"
-            },
-            {
-                id: 42,
-                word: "longer"
-            },
-            {
-                id: 43,
-                word: "he"
-            },
-            {
-                id: 44,
-                word: "lived"
-            },
-            {
-                id: 45,
-                word: "the"
-            },
-            {
-                id: 46,
-                word: "more"
-            },
-            {
-                id: 47,
-                word: "bile"
-            },
-            {
-                id: 48,
-                word: "he"
-            },
-            {
-                id: 49,
-                word: "was"
-            },
-            {
-                id: 50,
-                word: "becoming"
-            },
-            {
-                id: 51,
-                word: "and"
-            },
-            {
-                id: 52,
-                word: "the"
-            },
-            {
-                id: 53,
-                word: "more"
-            },
-            {
-                id: 54,
-                word: "poisonous"
-            },
-            {
-                id: 55,
-                word: "were"
-            },
-            {
-                id: 56,
-                word: "his"
-            },
-            {
-                id: 57,
-                word: "words."
-            },
-            {
-                id: 58,
-                word: "People"
-            },
-            {
-                id: 59,
-                word: "avoided"
-            },
-            {
-                id: 60,
-                word: "him,"
-            },
-            {
-                id: 61,
-                word: "because"
-            },
-            {
-                id: 62,
-                word: "his"
-            },
-            {
-                id: 63,
-                word: "misfortune"
-            },
-            {
-                id: 64,
-                word: "became"
-            },
-            {
-                id: 65,
-                word: "contagious."
-            },
-            {
-                id: 66,
-                word: "It"
-            },
-            {
-                id: 67,
-                word: "was"
-            },
-            {
-                id: 68,
-                word: "even"
-            },
-            {
-                id: 69,
-                word: "unnatural"
-            },
-            {
-                id: 70,
-                word: "and"
-            },
-            {
-                id: 71,
-                word: "insulting"
-            },
-            {
-                id: 72,
-                word: "to"
-            },
-            {
-                id: 73,
-                word: "be"
-            },
-            {
-                id: 74,
-                word: "happy"
-            },
-            {
-                id: 75,
-                word: "near"
-            },
-            {
-                id: 76,
-                word: "him."
-            },
-            {
-                id: 77,
-                word: "But"
-            },
-            {
-                id: 78,
-                word: "one"
-            },
-            {
-                id: 79,
-                word: "day,"
-            },
-            {
-                id: 80,
-                word: "when"
-            },
-            {
-                id: 81,
-                word: "he"
-            },
-            {
-                id: 82,
-                word: "turned"
-            },
-            {
-                id: 83,
-                word: "eighty"
-            },
-            {
-                id: 84,
-                word: "years"
-            },
-            {
-                id: 85,
-                word: "old,"
-            },
-            {
-                id: 86,
-                word: "an"
-            },
-            {
-                id: 87,
-                word: "incredible"
-            },
-            {
-                id: 88,
-                word: "thing"
-            },
-            {
-                id: 89,
-                word: "happened."
-            },
-            {
-                id: 90,
-                word: "Instantly"
-            },
-            {
-                id: 91,
-                word: "everyone"
-            },
-            {
-                id: 92,
-                word: "started"
-            },
-            {
-                id: 93,
-                word: "hearing"
-            },
-            {
-                id: 94,
-                word: "the"
-            },
-            {
-                id: 95,
-                word: "rumour"
-            },
-            {
-                id: 96,
-                word: "that"
-            },
-            {
-                id: 97,
-                word: "an"
-            },
-            {
-                id: 98,
-                word: "old"
-            },
-            {
-                id: 99,
-                word: "man"
-            },
-            {
-                id: 100,
-                word: "is"
-            },
-            {
-                id: 101,
-                word: "happy"
-            },
-            {
-                id: 102,
-                word: "today,"
-            },
-            {
-                id: 103,
-                word: "he"
-            },
-            {
-                id: 104,
-                word: "doesn\'t"
-            },
-            {
-                id: 105,
-                word: "complain"
-            },
-            {
-                id: 106,
-                word: "about"
-            },
-            {
-                id: 107,
-                word: "anything,"
-            },
-            {
-                id: 108,
-                word: "he"
-            },
-            {
-                id: 109,
-                word: "smiles,"
-            },
-            {
-                id: 110,
-                word: "and"
-            },
-            {
-                id: 111,
-                word: "even"
-            },
-            {
-                id: 112,
-                word: "his"
-            },
-            {
-                id: 113,
-                word: "face"
-            },
-            {
-                id: 114,
-                word: "is"
-            },
-            {
-                id: 115,
-                word: "freshened"
-            },
-            {
-                id: 116,
-                word: "up."
-            },
-            {
-                id: 117,
-                word: "The"
-            },
-            {
-                id: 118,
-                word: "whole"
-            },
-            {
-                id: 119,
-                word: "village"
-            },
-            {
-                id: 120,
-                word: "gathered"
-            },
-            {
-                id: 121,
-                word: "together."
-            },
-            {
-                id: 122,
-                word: "When"
-            },
-            {
-                id: 123,
-                word: "the"
-            },
-            {
-                id: 124,
-                word: "villagers"
-            },
-            {
-                id: 125,
-                word: "asked"
-            },
-            {
-                id: 126,
-                word: "him"
-            },
-            {
-                id: 127,
-                word: "what"
-            },
-            {
-                id: 128,
-                word: "had"
-            },
-            {
-                id: 129,
-                word: "happened"
-            },
-            {
-                id: 130,
-                word: "to"
-            },
-            {
-                id: 131,
-                word: "him,"
-            },
-            {
-                id: 132,
-                word: "the"
-            },
-            {
-                id: 133,
-                word: "old"
-            },
-            {
-                id: 134,
-                word: "man"
-            },
-            {
-                id: 135,
-                word: "said"
-            },
-            {
-                id: 136,
-                word: "that"
-            },
-            {
-                id: 137,
-                word: "it"
-            },
-            {
-                id: 138,
-                word: "had"
-            },
-            {
-                id: 139,
-                word: "been"
-            },
-            {
-                id: 140,
-                word: "eighty"
-            },
-            {
-                id: 141,
-                word: "years"
-            },
-            {
-                id: 142,
-                word: "he"
-            },
-            {
-                id: 143,
-                word: "had"
-            },
-            {
-                id: 144,
-                word: "been"
-            },
-            {
-                id: 145,
-                word: "chasing"
-            },
-            {
-                id: 146,
-                word: "happiness"
-            },
-            {
-                id: 147,
-                word: "and"
-            },
-            {
-                id: 148,
-                word: "it"
-            },
-            {
-                id: 149,
-                word: "was"
-            },
-            {
-                id: 150,
-                word: "useless."
-            },
-            {
-                id: 151,
-                word: "And"
-            },
-            {
-                id: 152,
-                word: "then"
-            },
-            {
-                id: 153,
-                word: "he"
-            },
-            {
-                id: 154,
-                word: "decided"
-            },
-            {
-                id: 155,
-                word: "to"
-            },
-            {
-                id: 156,
-                word: "live"
-            },
-            {
-                id: 157,
-                word: "without"
-            },
-            {
-                id: 158,
-                word: "happiness"
-            },
-            {
-                id: 159,
-                word: "and"
-            },
-            {
-                id: 160,
-                word: "just"
-            },
-            {
-                id: 161,
-                word: "enjoy"
-            },
-            {
-                id: 162,
-                word: "life."
-            },
-            {
-                id: 163,
-                word: "That\'s"
-            },
-            {
-                id: 164,
-                word: "why"
-            },
-            {
-                id: 165,
-                word: "I"
-            },
-            {
-                id: 166,
-                word: "am"
-            },
-            {
-                id: 167,
-                word: "happy"
-            },
-            {
-                id: 168,
-                word: "now."
-            }
-            ]
-        },
-        {
-            level: 3,
-            wordset: [{
-                id: 1,
                 word: "The"
             },
             {
@@ -1450,102 +774,779 @@ const Tester = () => {
                 word: "is"
             },
             {
-                id: 89,
+                id: 90,
                 word: "precious"
             },
             {
-                id: 90,
-                word: "and"
-            },
-            {
                 id: 91,
-                word: "faith"
+                word: "and"
             },
             {
                 id: 92,
-                word: "and"
+                word: "faith"
             },
             {
                 id: 93,
-                word: "hope"
+                word: "and"
             },
             {
                 id: 94,
-                word: "should"
+                word: "hope"
             },
             {
                 id: 95,
-                word: "never"
+                word: "should"
             },
             {
                 id: 96,
-                word: "be"
+                word: "never"
             },
             {
                 id: 97,
-                word: "lost."
-            },
-            {
-                id: 98,
-                word: "Another"
-            },
-            {
-                id: 99,
-                word: "theme"
-            },
-            {
-                id: 100,
-                word: "that"
-            },
-            {
-                id: 101,
-                word: "story"
-            },
-            {
-                id: 102,
-                word: "is"
-            },
-            {
-                id: 103,
-                word: "that"
-            },
-            {
-                id: 104,
-                word: "devoted"
-            },
-            {
-                id: 105,
-                word: "friendship"
-            },
-            {
-                id: 106,
-                word: "can"
-            },
-            {
-                id: 107,
                 word: "be"
             },
             {
+                id: 98,
+                word: "lost."
+            },
+            {
+                id: 99,
+                word: "Another"
+            },
+            {
+                id: 100,
+                word: "theme"
+            },
+            {
+                id: 101,
+                word: "that"
+            },
+            {
+                id: 102,
+                word: "story"
+            },
+            {
+                id: 103,
+                word: "is"
+            },
+            {
+                id: 104,
+                word: "that"
+            },
+            {
+                id: 105,
+                word: "devoted"
+            },
+            {
+                id: 106,
+                word: "friendship"
+            },
+            {
+                id: 107,
+                word: "can"
+            },
+            {
                 id: 108,
-                word: "succour"
+                word: "be"
             },
             {
                 id: 109,
-                word: "during"
+                word: "succour"
             },
             {
                 id: 110,
-                word: "times"
+                word: "during"
             },
             {
                 id: 111,
-                word: "of"
+                word: "times"
             },
             {
                 id: 112,
+                word: "of"
+            },
+            {
+                id: 113,
                 word: "crisis."
             }
-        ]
+            ]
+            
+        },
+        {
+            level: 3,
+            wordset: [{
+                id: 1,
+                word: "An"
+            },
+        {
+                id: 2,
+                word: "old"
+            },
+            {
+                id: 3,
+                word: "man"
+            },
+            {
+                id: 4,
+                word: "lived"
+            },
+            {
+                id: 5,
+                word: "in"
+            },
+            {
+                id: 6,
+                word: "the"
+            },
+            {
+                id: 7,
+                word: "village."
+            },
+            {
+                id: 8,
+                word: "He"
+            },
+            {
+                id: 9,
+                word: "was"
+            },
+            {
+                id: 10,
+                word: "one"
+            },
+            {
+                id: 11,
+                word: "of"
+            },
+            {
+                id: 12,
+                word: "the"
+            },
+            {
+                id: 13,
+                word: "most"
+            },
+            {
+                id: 14,
+                word: "unfortunate"
+            },
+            {
+                id: 15,
+                word: "people"
+            },
+            {
+                id: 16,
+                word: "in"
+            },
+            {
+                id: 17,
+                word: "the"
+            },
+            {
+                id: 18,
+                word: "world."
+            },
+            {
+                id: 19,
+                word: "The"
+            },
+            {
+                id: 20,
+                word: "whole"
+            },
+            {
+                id: 21,
+                word: "village"
+            },
+            {
+                id: 22,
+                word: "was"
+            },
+            {
+                id: 23,
+                word: "tired"
+            },
+            {
+                id: 24,
+                word: "of"
+            },
+            {
+                id: 25,
+                word: "him;"
+            },
+            {
+                id: 26,
+                word: "he"
+            },
+            {
+                id: 27,
+                word: "was"
+            },
+            {
+                id: 28,
+                word: "always"
+            },
+            {
+                id: 29,
+                word: "gloomy,"
+            },
+            {
+                id: 30,
+                word: "he"
+            },
+            {
+                id: 31,
+                word: "constantly"
+            },
+            {
+                id: 32,
+                word: "The"
+            },
+            {
+                id: 33,
+                word: "complained"
+            },
+            {
+                id: 34,
+                word: "and"
+            },
+            {
+                id: 35,
+                word: "was"
+            },
+            {
+                id: 36,
+                word: "always"
+            },
+            {
+                id: 37,
+                word: "in"
+            },
+            {
+                id: 38,
+                word: "a"
+            },
+            {
+                id: 39,
+                word: "bad"
+            },
+            {
+                id: 40,
+                word: "mood."
+            },
+            {
+                id: 41,
+                word: "The"
+            },
+            {
+                id: 42,
+                word: "longer"
+            },
+            {
+                id: 43,
+                word: "he"
+            },
+            {
+                id: 44,
+                word: "lived"
+            },
+            {
+                id: 45,
+                word: "the"
+            },
+            {
+                id: 46,
+                word: "more"
+            },
+            {
+                id: 47,
+                word: "bile"
+            },
+            {
+                id: 48,
+                word: "he"
+            },
+            {
+                id: 49,
+                word: "was"
+            },
+            {
+                id: 50,
+                word: "becoming"
+            },
+            {
+                id: 51,
+                word: "and"
+            },
+            {
+                id: 52,
+                word: "the"
+            },
+            {
+                id: 53,
+                word: "more"
+            },
+            {
+                id: 54,
+                word: "poisonous"
+            },
+            {
+                id: 55,
+                word: "were"
+            },
+            {
+                id: 56,
+                word: "his"
+            },
+            {
+                id: 57,
+                word: "words."
+            },
+            {
+                id: 58,
+                word: "People"
+            },
+            {
+                id: 59,
+                word: "avoided"
+            },
+            {
+                id: 60,
+                word: "him,"
+            },
+            {
+                id: 61,
+                word: "because"
+            },
+            {
+                id: 62,
+                word: "his"
+            },
+            {
+                id: 63,
+                word: "misfortune"
+            },
+            {
+                id: 64,
+                word: "became"
+            },
+            {
+                id: 65,
+                word: "contagious."
+            },
+            {
+                id: 66,
+                word: "It"
+            },
+            {
+                id: 67,
+                word: "was"
+            },
+            {
+                id: 68,
+                word: "even"
+            },
+            {
+                id: 69,
+                word: "unnatural"
+            },
+            {
+                id: 70,
+                word: "and"
+            },
+            {
+                id: 71,
+                word: "insulting"
+            },
+            {
+                id: 72,
+                word: "to"
+            },
+            {
+                id: 73,
+                word: "be"
+            },
+            {
+                id: 74,
+                word: "happy"
+            },
+            {
+                id: 75,
+                word: "near"
+            },
+            {
+                id: 76,
+                word: "him."
+            },
+            {
+                id: 77,
+                word: "But"
+            },
+            {
+                id: 78,
+                word: "one"
+            },
+            {
+                id: 79,
+                word: "day,"
+            },
+            {
+                id: 80,
+                word: "when"
+            },
+            {
+                id: 81,
+                word: "he"
+            },
+            {
+                id: 82,
+                word: "turned"
+            },
+            {
+                id: 83,
+                word: "eighty"
+            },
+            {
+                id: 84,
+                word: "years"
+            },
+            {
+                id: 85,
+                word: "old,"
+            },
+            {
+                id: 86,
+                word: "an"
+            },
+            {
+                id: 87,
+                word: "incredible"
+            },
+            {
+                id: 88,
+                word: "thing"
+            },
+            {
+                id: 89,
+                word: "happened."
+            },
+            {
+                id: 90,
+                word: "Instantly"
+            },
+            {
+                id: 91,
+                word: "everyone"
+            },
+            {
+                id: 92,
+                word: "started"
+            },
+            {
+                id: 93,
+                word: "hearing"
+            },
+            {
+                id: 94,
+                word: "the"
+            },
+            {
+                id: 95,
+                word: "rumour"
+            },
+            {
+                id: 96,
+                word: "that"
+            },
+            {
+                id: 97,
+                word: "an"
+            },
+            {
+                id: 98,
+                word: "old"
+            },
+            {
+                id: 99,
+                word: "man"
+            },
+            {
+                id: 100,
+                word: "is"
+            },
+            {
+                id: 101,
+                word: "happy"
+            },
+            {
+                id: 102,
+                word: "today,"
+            },
+            {
+                id: 103,
+                word: "he"
+            },
+            {
+                id: 104,
+                word: "doesn't"
+            },
+            {
+                id: 105,
+                word: "complain"
+            },
+            {
+                id: 106,
+                word: "about"
+            },
+            {
+                id: 107,
+                word: "anything,"
+            },
+            {
+                id: 108,
+                word: "he"
+            },
+            {
+                id: 109,
+                word: "smiles,"
+            },
+            {
+                id: 110,
+                word: "and"
+            },
+            {
+                id: 111,
+                word: "even"
+            },
+            {
+                id: 112,
+                word: "his"
+            },
+            {
+                id: 113,
+                word: "face"
+            },
+            {
+                id: 114,
+                word: "is"
+            },
+            {
+                id: 115,
+                word: "freshened"
+            },
+            {
+                id: 116,
+                word: "up."
+            },
+            {
+                id: 117,
+                word: "The"
+            },
+            {
+                id: 118,
+                word: "whole"
+            },
+            {
+                id: 119,
+                word: "village"
+            },
+            {
+                id: 120,
+                word: "gathered"
+            },
+            {
+                id: 121,
+                word: "together."
+            },
+            {
+                id: 122,
+                word: "When"
+            },
+            {
+                id: 123,
+                word: "the"
+            },
+            {
+                id: 124,
+                word: "villagers"
+            },
+            {
+                id: 125,
+                word: "asked"
+            },
+            {
+                id: 126,
+                word: "him"
+            },
+            {
+                id: 127,
+                word: "what"
+            },
+            {
+                id: 128,
+                word: "had"
+            },
+            {
+                id: 129,
+                word: "happened"
+            },
+            {
+                id: 130,
+                word: "to"
+            },
+            {
+                id: 131,
+                word: "him,"
+            },
+            {
+                id: 132,
+                word: "the"
+            },
+            {
+                id: 133,
+                word: "old"
+            },
+            {
+                id: 134,
+                word: "man"
+            },
+            {
+                id: 135,
+                word: "said"
+            },
+            {
+                id: 136,
+                word: "that"
+            },
+            {
+                id: 137,
+                word: "it"
+            },
+            {
+                id: 138,
+                word: "had"
+            },
+            {
+                id: 139,
+                word: "been"
+            },
+            {
+                id: 140,
+                word: "eighty"
+            },
+            {
+                id: 141,
+                word: "years"
+            },
+            {
+                id: 142,
+                word: "he"
+            },
+            {
+                id: 143,
+                word: "had"
+            },
+            {
+                id: 144,
+                word: "been"
+            },
+            {
+                id: 145,
+                word: "chasing"
+            },
+            {
+                id: 146,
+                word: "happiness"
+            },
+            {
+                id: 147,
+                word: "and"
+            },
+            {
+                id: 148,
+                word: "it"
+            },
+            {
+                id: 149,
+                word: "was"
+            },
+            {
+                id: 150,
+                word: "useless."
+            },
+            {
+                id: 151,
+                word: "And"
+            },
+            {
+                id: 152,
+                word: "then"
+            },
+            {
+                id: 153,
+                word: "he"
+            },
+            {
+                id: 154,
+                word: "decided"
+            },
+            {
+                id: 155,
+                word: "to"
+            },
+            {
+                id: 156,
+                word: "live"
+            },
+            {
+                id: 157,
+                word: "without"
+            },
+            {
+                id: 158,
+                word: "happiness"
+            },
+            {
+                id: 159,
+                word: "and"
+            },
+            {
+                id: 160,
+                word: "just"
+            },
+            {
+                id: 161,
+                word: "enjoy"
+            },
+            {
+                id: 162,
+                word: "life."
+            },
+            {
+                id: 163,
+                word: "That's"
+            },
+            {
+                id: 164,
+                word: "why"
+            },
+            {
+                id: 165,
+                word: "I"
+            },
+            {
+                id: 166,
+                word: "am"
+            },
+            {
+                id: 167,
+                word: "happy"
+            },
+            {
+                id: 168,
+                word: "now."
+            }
+            ]
         }
     ]
     const [requiredWordIndex, setRequiredWordIndex] = useState(0);
@@ -1557,7 +1558,9 @@ const Tester = () => {
     const [userAccuracy, setUserAccuracy] = useState(0);
     const [userWpmScore, setUserWpmScore] = useState(0);
     const [timeCount, setTimeCount] = useState(60);
+    const [timer, setTimer] = useState(60);
     const [testStarted, setTestStarted] = useState(false);
+    const [testRestartedAt, setTestRestartedAt] = useState(0);
     const [showReport, setShowReport] = useState(false);
     const [level, setLevel] = useState(0);
     const context = useContext(Context);
@@ -1567,30 +1570,28 @@ const Tester = () => {
             setRequiredWord(requiredObject.word);
         }
         if(event.key !== null){
-            // console.log(event.key, event);
             const keyName = event.key;
             if(event.keyCode > 64 && event.keyCode < 91){ 
                 setUserLetterInput(prevState => [...prevState, keyName]); //setting state only on alphabet keycodes
+            }else if(event.keyCode === 186 || event.keyCode === 188){
+                setUserLetterInput(prevState => [...prevState, keyName]); //etting state for semi-colon and comma
+            }else if(event.keyCode === 190 || event.keyCode === 222){
+                setUserLetterInput(prevState => [...prevState, keyName]); //etting state for period and single quotes
             }
             if(userLetterInput.length === 1){
                 setTestStarted(true);
             }
-            // document.addEventListener('keydown', handleKeyDown, false);
             if(keyName === ' '){
-                // console.log(event);
                 const userinput = userLetterInput.toString();
                 const toMatch = userinput.split(',').join('');
-                // console.log(toMatch);
-                // console.log(requiredWord);
                 const isMatched = toMatch.localeCompare(requiredWord);
-                // console.log(isMatched);
                 const nextword = requiredObject != null ? requiredObject.id + 1 : null;
-                if(nextword == null){
+                if(nextword === null || timeCount === 0){
+                    setTestStarted(false);
+                    console.log("inside nextword and timeCount === 0 block")
                     generateReport(userAccuracy, userWpmScore, level);
-                    $(".modal").show();
                     return;
                 }
-                console.log(nextword);
                 if(isMatched !== 0){
                     $('#' + requiredObject.id).addClass('error');
                     $('#' + requiredObject.id).removeClass('underline');
@@ -1602,8 +1603,6 @@ const Tester = () => {
                 $('#' + nextword).addClass('underline');
                 setAttemptedWords(prevState => prevState + 1);
                 setRequiredWordIndex(prevState => prevState + 1);
-                var p = $( ".requiredWord:first" );
-                $( ".requiredWord:last" ).css( "scrollTop:" + p.scrollTop());
                 setUserLetterInput([]);
             }else if(keyName === "Backspace"){
                 let removed = userLetterInput.filter((_, index) => index !== userLetterInput.length - 1);
@@ -1612,42 +1611,40 @@ const Tester = () => {
             return keyName;
         }
     }
-    const timecountHandler = (timer) => {
-        setTimeCount(prevState => prevState - 1);
-        if (timeCount > 0) {
-          setTimeout(timecountHandler, 1000);
-        }else{
-            setTestStarted(false);
-            setTimeCount(60);
-            setShowReport(true);
-        }
-    }
     const calculateAccuracy = (incorrectWords, attemptedWords) => {
         const correctWords = attemptedWords - incorrectWords;
         setCorrectWords(correctWords);
-        const attempedby5 = attemptedWords;
-        const grossWpm = attempedby5 / (timeCount/60);
-        const numerator = attempedby5 - incorrectWords;
-        const netWpm = numerator / (timeCount/60);
-        setUserWpmScore(netWpm.toFixed(1));
-        const accuracy = (netWpm / grossWpm) * 100;
+        const minutes = (timer - timeCount) / 60;
+        const netWpm = correctWords / minutes;
+        setUserWpmScore(netWpm.toFixed(0));
+        const accuracy = (correctWords / attemptedWords) * 100;
         setUserAccuracy(accuracy.toFixed(2));
-        // const accuracy = (correctWords / attemptedWords) * 100;
-        // setUserAccuracy(accuracy.toFixed(2));
     }
     const setTimeCounter = (setTo) => {
+        setTestRestartedAt(setTo);
         setTimeCount(setTo);
+        setTimer(setTo);
         switch (setTo) {
             case 60:
                 setLevel(0);
+                $("#level0").addClass("active-bg");
+                $("#level1").removeClass("active-bg");
+                $("#level2").removeClass("active-bg");
                 break;
             case 180:
                 setLevel(1);
+                $("#level1").addClass("active-bg");
+                $("#level0").removeClass("active-bg");
+                $("#level2").removeClass("active-bg");
                 break;
             case 300:
                 setLevel(2);
+                $("#level2").addClass("active-bg");
+                $("#level0").removeClass("active-bg");
+                $("#level1").removeClass("active-bg");
                 break;
             default:
+                setLevel(0);
                 break;
         }
         setAttemptedWords(0);
@@ -1659,32 +1656,50 @@ const Tester = () => {
         $(".requiredWord").removeClass("active");
         $(".user-typebox").val("");
         setRequiredWordIndex(0);
+        setUserLetterInput([]);
     }
     const generateReport = (userAccuracy, userWpmScore, level) => {
-        axios.post("http://localhost:3001/api/insert/user/report", {accuracy: userAccuracy, wpmScore: userWpmScore, timeSpan: level })
+        axios.post("http://localhost:3001/api/insert/user/report", {email: context.user, accuracy: userAccuracy, wpmScore: userWpmScore, timeSpan: level })
         .then(res =>{
-            console.log(res.status);
-            console.log(res.data);
+            if(res.status === 200){
+                console.log(res.status);
+                console.log(res.data);
+            }
+            console.log(res);
         });
     }
-    useEffect(()=>{
-        console.log(userLetterInput);
-    },[userLetterInput]);
+    const resetTest = () => {
+        setTestStarted(false);
+        if(showReport === true){
+            testRestartedAt !== 0 ? setTimeCounter(testRestartedAt) : setTimeCounter(60);
+            setShowReport(false);
+        }else{
+            testRestartedAt !== 0 ? setTimeCounter(testRestartedAt) : setTimeCounter(61);  
+        }
+    }
     useEffect(()=>{
         calculateAccuracy(incorrectWords, attemptedWords);
-    },[attemptedWords, incorrectWords]);
+    },[attemptedWords, incorrectWords, timeCount]);
     useEffect(()=>{
-        if(testStarted === true){
-            timecountHandler(60);
+        if(testStarted === true && timeCount > 0){
+           setTimeout(() => {
+                setTimeCount(prevState => prevState - 1)
+           }, 1000);
         }
-    },[testStarted]);
-    //check OVERFLOW CONTENT MOVING TO LEFT SIDE in WPM TEST inside laravel-react folder
+        if(timeCount === 0){
+            setShowReport(true);
+            generateReport(userAccuracy, userWpmScore, level);
+        }
+        if(testStarted === false && showReport === false){
+            testRestartedAt !== 0 ? setTimeCounter(testRestartedAt) : setTimeCounter(60);  
+        }
+    },[testStarted, timeCount]);
         if(context.isLoggedIn === true){
             return (
               <React.Fragment>
                 <Navbar />
                 <div className="tester" style={{ maxWidth: "100%" }}>
-                  <h1 className="text-center">Typing Test</h1>
+                  <h1 className="text-center text-theme fw-bold">Typing Test</h1>
                   <p className="text-center my-3">
                     Start typing in the below box to know your best Words Per
                     Minute Score.
@@ -1692,8 +1707,36 @@ const Tester = () => {
                   <div className="container-fluid tester-body d-flex justify-content-center">
                     {!showReport && (
                       <div className="col-sm-10">
-                        <div className="row">
-                          <div className="circular-counter text-center col-sm-3">
+                        <div className="float-end ms-4" id="statistics">
+                          
+                          <div className="col-sm-12 row m-0 mt-4 d-flex float-end flex-column" style={{gap: "1rem"}}>
+                            <div className="col-sm-12 bg-white display-card text-center p-3">
+                              <p className="h6">Accuracy</p>
+                              <span className="fw-bold h5">
+                                {userAccuracy > 0
+                                  ? userAccuracy + " %"
+                                  : 0 + " %"}
+                              </span>
+                            </div>
+                            <div className="col-sm-12 bg-white display-card text-center p-3">
+                              <p className="h6">Words/min</p>
+                              <span className="fw-bold h5">
+                                {userWpmScore > 0
+                                  ? userWpmScore + " WPM"
+                                  : 0 + " WPM"}
+                              </span>
+                            </div>
+                            <div className="col-sm-12 bg-white display-card text-center p-3">
+                              <p className="h6">Errors</p>
+                              <span className="fw-bold h5">
+                                {incorrectWords}
+                              </span>
+                            </div>
+                            <button className='btn btn-theme text-white py-2 my-auto' onClick={resetTest} style={{fontSize: "1.2rem"}}>Reset Test</button>
+                          </div>
+                        </div>
+                        <div className="row justify-content-center menu-row mt-2">
+                        <div className="circular-counter text-center d-flex justify-content-center col-sm-3">
                             <svg
                               className="progress-ring-basic"
                               height="120"
@@ -1708,7 +1751,7 @@ const Tester = () => {
                                 cy="60"
                                 strokeLinecap="round"
                                 id="circle2"
-                                stroke="#ffd000"
+                                stroke="#8a2be2"
                                 style={{
                                   strokeDasharray: 314.159,
                                   strokeDashoffset: 0,
@@ -1716,58 +1759,36 @@ const Tester = () => {
                               ></circle>
                             </svg>
                             <span className="fw-bold time-counter">
-                              {timeCount > 0 ? timeCount : 60}s
+                              {timeCount > 0 ? timeCount : timeCount}s
                             </span>
-                          </div>
-                          <div className="col-sm-9 row m-0 d-flex justify-content-around">
-                            <div className="col-sm-4 bg-white display-card text-center pt-3">
-                              <p className="fw-bold h4">Accuracy</p>
-                              <span className="fw-bold h5">
-                                {userAccuracy > 0
-                                  ? userAccuracy + " %"
-                                  : 0 + " %"}
-                              </span>
-                            </div>
-                            <div className="col-sm-4 bg-white display-card text-center pt-3">
-                              <p className="fw-bold h4">Words/min</p>
-                              <span className="fw-bold h5">
-                                {userWpmScore > 0
-                                  ? userWpmScore + " WPM"
-                                  : 0 + " WPM"}
-                              </span>
-                            </div>
-                            <div className="col-sm-4 bg-white display-card text-center pt-3">
-                              <p className="fw-bold h4">Errors</p>
-                              <span className="fw-bold h5">
-                                {incorrectWords}/{attemptedWords}
-                              </span>
-                            </div>
-                          </div>
                         </div>
-                        <div className="row justify-content-center menu-row mt-5">
-                          <div className="d-flex col-sm-5 offset-sm-1 col-12">
-                            <p className="mr-1 my-auto">Time Modes</p>
+                        <div className="d-flex py-5 col-sm-5 align-items-center col-12" style={{maxHeight: "50px", width: "fit-content"}}>
+                            <p className="mr-1 pt-2 h5 my-auto">Time Modes:</p>
                             <button
-                              className="btn mx-2 menu-btn"
+                              className="btn mx-2 my-auto menu-btn"
+                              id="level0"
                               onClick={() => setTimeCounter(60)}
                             >
                               1 Minute
                             </button>
                             <button
-                              className="btn mx-2 menu-btn"
+                              className="btn mx-2 my-auto menu-btn"
+                              id="level1"
                               onClick={() => setTimeCounter(180)}
                             >
                               3 Minute
                             </button>
                             <button
-                              className="btn mx-2 menu-btn"
+                              className="btn mx-2 my-auto menu-btn"
+                              id="level2"
                               onClick={() => setTimeCounter(300)}
                             >
                               5 Minute
                             </button>
-                          </div>
+                            
                         </div>
-                        <div className="row justify-content-center task-row mt-5">
+                        </div>
+                        <div className="row justify-content-center task-row mt-4">
                           <div className="task-card">
                             <div className="word-section">
                               {requiredWords[level].wordset.map(
@@ -1795,49 +1816,35 @@ const Tester = () => {
                     )}
                   </div>
                 </div>
-                {/* <div className="modal" tabIndex="-1" role="dialog">
-                    <div className="modal-dialog" role="document">
-                        <div className="modal-content bg-dark text-white">
-                        <div className="modal-header">
-                            <h5 className="modal-title">Thank you for taking the test!</h5>
-                            <button type="button" className="close bg-dark text-white" data-dismiss="modal" aria-label="Close" onClick={()=>{$(".modal").hide()}}>
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            <p>You have a typing speed of { userWpmScore > 0 ? userWpmScore + ' WPM' : 0 + ' WPM'}.</p>
-                            <p>Your Accuracy was {userAccuracy > 0 ? userAccuracy + ' %' : 0 + ' %'}!</p>
-                        </div>
-                        </div>
-                    </div>
-                    </div> */}
                 {showReport === true && (
-                  <div className="container" style={{ maxWidth: "50rem", height: "20rem"}}>
-                    <div id="cards_landscape_wrap-2 h-100">
+                  <div className="container" style={{ maxWidth: "50rem", height: "25rem"}}>
+                    <div id="cards_landscape_wrap-2" className='h-100'>
                       <div className="container h-100">
                         <div className="row h-100">
                           <div className="col-xs-12 h-100 p-0">
-                              <div className="card-flyer">
-                                <div className="text-box row m-0 h-100">
+                              <div className="card-flyer h-100">
+                                <div className="text-box row m-0 p-4 h-100">
                                   <div className="image-box col-sm-4 p-0">
                                     <img
-                                      src="https://cdn.pixabay.com/photo/2018/03/30/15/11/deer-3275594_960_720.jpg"
+                                      src="https://www.downloadclipart.net/large/award-ribbon-badge-transparent-png.png"
                                       alt="img"
+                                      width="100%"
                                     />
                                   </div>
-                                  <div className="text-container col-sm-8 p-4">
-                                    <h3 className='fw-bold h3 py-3'>Thank you for taking the test!</h3>
+                                  <div className="text-container col-sm-8 p-3">
+                                    <h3 className='fw-bold h3 py-2 text-theme'>Thank you for taking the test!</h3>
                                     <div className='pt-4'>
                                         <h4> You Typed with a speed of &nbsp;
-                                            <span className='text-warning'>{userWpmScore > 0 ? userWpmScore + " WPM" : 0 + " WPM"}.</span>
+                                            <span className='text-theme'>{userWpmScore > 0 ? userWpmScore + " WPM" : 0 + " WPM"}.</span>
                                         </h4>
                                         <h5>The Accuracy of your typing was &nbsp;
                                             <span className='text-primary'>{userAccuracy > 0 ? userAccuracy + " %" : 0 + " %"}</span>
                                         </h5>
                                     </div>
+                                    <h6 className='text-warning my-3'>Check your Inbox for complete Report of your Test.</h6>
                                     <div className='mt-3'>
                                     <p className='py-3'>You can do better on your next turn. Click below to take the test again!</p>
-                                    <button>Reappear Test</button>
+                                    <button className='btn btn-theme px-3 py-2 text-white' onClick={resetTest}>Reappear Test</button>
                                     </div>
                                   </div>
                                 </div>

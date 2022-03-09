@@ -13,10 +13,10 @@ const Navbar = () => {
         }
     }
     return ( 
-        <nav className='navbar bg-theme-secondary px-5'>
-            <h1 className='h2 fw-bold text-white'>Typing Test</h1>
+        <nav className='navbar bg-theme px-5'>
+            <h1 className='h2 fw-bold text-theme'>Typing Test</h1>
             <div className='ms-auto'>
-                <button className='btn-default px-4 py-2 text-dark' onClick={statusHandler}>{context.isLoggedIn === true ? 'Logout' : 'Login'}</button>
+                <button className='btn-transparent btn border-theme text-theme fw-bold px-4 py-2' onClick={statusHandler}>{context.isLoggedIn === true ? 'Logout' : 'Login'}</button>
             </div>
         </nav>
      );
